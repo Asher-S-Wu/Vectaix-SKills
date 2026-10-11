@@ -1,27 +1,31 @@
 ---
 name: deslop
-description: Use when cleaning up AI-generated code slop, unnecessary comments, boilerplate, or over-engineering in current project code, or when reviewing SKILL.md files for quality before promoting them.
+description: Remove AI-generated code slop, unnecessary comments, and over-engineering from the current branch diff. Cleans up boilerplate, simplifies abstractions, strips defensive code, and in skill-file mode lints SKILL.md files for quality. Use when cleaning up code, simplifying, removing boilerplate, before committing, or when reviewing a skill before promoting it.
 ---
 
 # Remove AI Code Slop
 
-Review the code currently present in the project and remove unnecessary complexity, redundant comments, and boilerplate based on its actual behavior and local conventions.
+Check the diff against main and remove AI-generated slop introduced in the branch.
 
 ## Trigger
 
-Use when the user requests code cleanup or when code feels over-engineered.
+Use after completing changes, before committing, or when code feels over-engineered.
 
-## Scope
+## Commands
 
-Use the files or directories the user specifies. Otherwise, review the current project's source code, excluding third-party dependencies and generated output. Include existing and newly written code regardless of commit status. The skill also works in directories without Git.
+```bash
+git fetch origin main
+git diff origin/main...HEAD --stat
+git diff origin/main...HEAD
+```
 
 ## Workflow
 
-1. Locate source files within the scope and identify the project's conventions and available checks.
-2. Read the current files and relevant callers to understand behavior, then identify slop patterns from the focus areas below.
-3. Remove or simplify the identified slop while preserving intended functionality.
-4. Re-read the edited code and affected callers to verify the cleanup remains consistent with the surrounding implementation.
-5. Run the project's relevant tests, type checks, or lint checks for the affected code. Report any checks that could not be run.
+1. Run diff commands to see all changes on the branch.
+2. Identify slop patterns from the focus areas below.
+3. Apply minimal, focused edits to remove slop.
+4. Re-run `git diff origin/main...HEAD` to verify only slop was removed.
+5. Run tests or type-check to confirm behaviour unchanged: `npm test -- --changed --passWithNoTests 2>&1 | tail -10`
 6. Summarise what was cleaned.
 
 ## Focus Areas
@@ -33,7 +37,7 @@ Use the files or directories the user specifies. Otherwise, review the current p
 - Deeply nested code that should be simplified with early returns
 - Backwards-compatibility hacks (renamed `_vars`, re-exports, `// removed` comments)
 - Features, refactoring, or "improvements" beyond what was requested
-- Docstrings, type annotations, or comments that add no useful information in context
+- Added docstrings, type annotations, or comments on code that wasn't changed
 - Error handling for scenarios that can't happen in trusted internal paths
 
 ## Guardrails
@@ -46,7 +50,7 @@ Use the files or directories the user specifies. Otherwise, review the current p
 
 ## Skill-file mode
 
-When the target is a `SKILL.md`, lint it against the same
+When the target is a `SKILL.md` (not a code diff), lint it against the same
 slop instinct applied to prose. Run this before promoting a skill. Flag:
 
 - **Stale lines** - guidance written for an old version of the skill that no
