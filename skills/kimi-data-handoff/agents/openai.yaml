@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kimi 数据交接"
+  short_description: "为 Kimi 编写数据请求提示词，将数据、来源和字段说明打包交给 Agent"
+  default_prompt: "使用 $kimi-data-handoff，为当前任务生成可复制给 Kimi 的数据请求提示词，并列出交付包需要包含的内容。"
