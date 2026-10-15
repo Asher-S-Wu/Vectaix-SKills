@@ -64,7 +64,7 @@
       "skillPath": "skills/octen-design/SKILL.md",
       "skillFolderHash": "7a47760ce882c36b01b217984f6687bdfe1aaf82",
       "installedAt": "2026-10-10T15:40:23.050Z",
-      "updatedAt": "2026-10-10T15:40:23.050Z"
+      "updatedAt": "2026-10-15T16:41:11.157Z"
     },
     "octen-extract": {
       "source": "Octen-Team/octen-skills",
@@ -73,7 +73,7 @@
       "skillPath": "skills/octen-extract/SKILL.md",
       "skillFolderHash": "f2e55379527313f52beadff7a5a05ee619205c96",
       "installedAt": "2026-10-10T15:40:23.069Z",
-      "updatedAt": "2026-10-10T15:40:23.069Z"
+      "updatedAt": "2026-10-15T16:41:11.176Z"
     },
     "octen-image-search": {
       "source": "Octen-Team/octen-skills",
@@ -82,7 +82,7 @@
       "skillPath": "skills/octen-image-search/SKILL.md",
       "skillFolderHash": "68701005fab76b20e81d17c2eee0d35aa127fc5e",
       "installedAt": "2026-10-10T15:40:23.086Z",
-      "updatedAt": "2026-10-10T15:40:23.086Z"
+      "updatedAt": "2026-10-15T16:41:11.192Z"
     },
     "octen-search": {
       "source": "Octen-Team/octen-skills",
@@ -91,7 +91,7 @@
       "skillPath": "skills/octen-search/SKILL.md",
       "skillFolderHash": "651b1f12df117695975ad69bf2be98a503402f0e",
       "installedAt": "2026-10-10T15:40:23.099Z",
-      "updatedAt": "2026-10-10T15:40:23.099Z"
+      "updatedAt": "2026-10-15T16:41:11.209Z"
     },
     "octen-video-search": {
       "source": "Octen-Team/octen-skills",
@@ -100,7 +100,7 @@
       "skillPath": "skills/octen-video-search/SKILL.md",
       "skillFolderHash": "3ed61501948d8ce9ecc90e3998963f1584c18c54",
       "installedAt": "2026-10-10T15:40:23.113Z",
-      "updatedAt": "2026-10-10T15:40:23.113Z"
+      "updatedAt": "2026-10-15T16:41:11.221Z"
     },
     "octen-web-search": {
       "source": "Octen-Team/octen-skills",
@@ -109,7 +109,7 @@
       "skillPath": "skills/octen-web-search/SKILL.md",
       "skillFolderHash": "7e4a98b1f83580ab10c504c613569fa47321a112",
       "installedAt": "2026-10-10T15:40:23.131Z",
-      "updatedAt": "2026-10-10T15:40:23.131Z"
+      "updatedAt": "2026-10-15T16:41:11.250Z"
     },
     "monid": {
       "source": "monid-ai/plugins",
@@ -165,6 +165,46 @@
       "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
       "installedAt": "2026-10-13T05:37:12.015Z",
       "updatedAt": "2026-10-13T05:37:12.015Z"
+    },
+    "docx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/docx/SKILL.md",
+      "skillFolderHash": "6e6f5b95c1de6e803cc07b214f5059b074d64e0c",
+      "pluginName": "document-skills",
+      "installedAt": "2026-10-15T17:12:31.967Z",
+      "updatedAt": "2026-10-15T17:12:31.967Z"
+    },
+    "pdf": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/pdf/SKILL.md",
+      "skillFolderHash": "6369f4649de69bd6857c9bc3b058a77206009238",
+      "pluginName": "document-skills",
+      "installedAt": "2026-10-15T17:12:31.985Z",
+      "updatedAt": "2026-10-15T17:12:31.985Z"
+    },
+    "pptx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/pptx/SKILL.md",
+      "skillFolderHash": "64529c8b3f35fe632b7256bd2f6d46e4b40160ce",
+      "pluginName": "document-skills",
+      "installedAt": "2026-10-15T17:12:31.999Z",
+      "updatedAt": "2026-10-15T17:12:31.999Z"
+    },
+    "xlsx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/xlsx/SKILL.md",
+      "skillFolderHash": "fe6471cc9b5b97aae0b576ccb92ffd9b0207589d",
+      "pluginName": "document-skills",
+      "installedAt": "2026-10-15T17:12:32.012Z",
+      "updatedAt": "2026-10-15T17:12:32.012Z"
     }
   },
   "dismissed": {}
