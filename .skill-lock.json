@@ -205,6 +205,24 @@
       "pluginName": "document-skills",
       "installedAt": "2026-10-15T17:12:32.012Z",
       "updatedAt": "2026-10-15T17:12:32.012Z"
+    },
+    "xilo-opus-video": {
+      "source": "Kianzzz/xilo-opus-video",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Kianzzz/xilo-opus-video.git",
+      "skillPath": "skills/xilo-opus-video/SKILL.md",
+      "skillFolderHash": "91cb5eb96cecc5d9df0eb04dce5052b3fbaf3ff7",
+      "installedAt": "2026-10-17T05:42:51.004Z",
+      "updatedAt": "2026-10-17T05:42:51.004Z"
+    },
+    "video-shotcraft": {
+      "source": "Vincentwei1021/video-shotcraft",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Vincentwei1021/video-shotcraft.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "310330cadcf41f5d2b15ee1c908d629e26d0a324",
+      "installedAt": "2026-10-17T09:31:52.603Z",
+      "updatedAt": "2026-10-17T09:31:52.603Z"
     }
   },
   "dismissed": {}
