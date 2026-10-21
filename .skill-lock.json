@@ -223,6 +223,24 @@
       "skillFolderHash": "310330cadcf41f5d2b15ee1c908d629e26d0a324",
       "installedAt": "2026-10-17T09:31:52.603Z",
       "updatedAt": "2026-10-17T09:31:52.603Z"
+    },
+    "exa-contents": {
+      "source": "exa-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/exa-labs/agent-skills.git",
+      "skillPath": "skills/exa-contents/SKILL.md",
+      "skillFolderHash": "3206fd0db4675af34e864f24b0abf20b58881407",
+      "installedAt": "2026-10-20T10:52:53.691Z",
+      "updatedAt": "2026-10-20T10:52:53.691Z"
+    },
+    "exa-search": {
+      "source": "exa-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/exa-labs/agent-skills.git",
+      "skillPath": "skills/exa-search/SKILL.md",
+      "skillFolderHash": "346b289f038b89274797526b438e3c0b83d71ede",
+      "installedAt": "2026-10-20T10:52:53.723Z",
+      "updatedAt": "2026-10-20T10:52:53.723Z"
     }
   },
   "dismissed": {}
