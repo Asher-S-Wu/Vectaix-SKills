@@ -120,15 +120,6 @@
       "installedAt": "2026-10-10T15:40:36.987Z",
       "updatedAt": "2026-10-10T15:40:36.987Z"
     },
-    "qveris-official": {
-      "source": "QVerisAI/open-qveris-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/QVerisAI/open-qveris-skills.git",
-      "skillPath": "qveris-official/SKILL.md",
-      "skillFolderHash": "2546d4bc6a073115a6a5d7a145963d3993485959",
-      "installedAt": "2026-10-10T15:44:33.441Z",
-      "updatedAt": "2026-10-10T15:44:33.441Z"
-    },
     "kimi-data-handoff": {
       "source": "Asher-S-Wu/Vectaix-SKills",
       "sourceType": "github",
@@ -231,7 +222,7 @@
       "skillPath": "skills/exa-contents/SKILL.md",
       "skillFolderHash": "3206fd0db4675af34e864f24b0abf20b58881407",
       "installedAt": "2026-10-20T10:52:53.691Z",
-      "updatedAt": "2026-10-20T10:52:53.691Z"
+      "updatedAt": "2026-10-21T16:33:57.061Z"
     },
     "exa-search": {
       "source": "exa-labs/agent-skills",
@@ -240,7 +231,7 @@
       "skillPath": "skills/exa-search/SKILL.md",
       "skillFolderHash": "346b289f038b89274797526b438e3c0b83d71ede",
       "installedAt": "2026-10-20T10:52:53.723Z",
-      "updatedAt": "2026-10-20T10:52:53.723Z"
+      "updatedAt": "2026-10-21T16:33:57.101Z"
     }
   },
   "dismissed": {}
