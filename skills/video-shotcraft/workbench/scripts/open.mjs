@@ -30,7 +30,6 @@ const isLink = (p) => { try { return lstatSync(p).isSymbolicLink(); } catch { re
 const rmLink = (p) => { if (isLink(p)) unlinkSync(p); };
 const log = (s) => console.log(`[workbench] ${s}`);
 const die = (s, code = 1) => { console.error(`[workbench] ${s}`); process.exit(code); };
-const linkType = process.platform === "win32" ? "junction" : undefined;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // —— 1. 定位成片工程 ——
@@ -52,7 +51,7 @@ if (!relink) {
 
   // —— 2. 链接 src → proj，public/* → public/* ——
   rmLink(projLink);
-  symlinkSync(srcDir, projLink, linkType);
+  symlinkSync(srcDir, projLink);
   const pub = join(wb, "public");
   mkdirSync(pub, { recursive: true });
   // 清掉上一部片留下的链接（只删符号链接和我们建的 textures/ 兜底目录，不碰真实文件）
@@ -68,7 +67,7 @@ if (!relink) {
   if (existsSync(publicSrc)) {
     for (const e of readdirSync(publicSrc)) {
       if (e.startsWith(".")) continue;
-      symlinkSync(join(publicSrc, e), join(pub, e), linkType);
+      symlinkSync(join(publicSrc, e), join(pub, e));
       n++;
     }
   }

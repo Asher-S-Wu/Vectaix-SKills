@@ -1,11 +1,10 @@
 ---
 name: x
-description: "Use when building applications that interact with X (formerly
-  Twitter) data and functionality. Reach for this skill when agents need to:
-  read or search posts, manage user accounts, access real-time streams, send
-  direct messages, manage lists, or integrate X data into applications. Use for
-  API integration, authentication setup, request building, pagination, error
-  handling, and rate limit management."
+description: Use when building integrations with X (formerly Twitter) to read
+  posts, search content, manage user interactions, stream real-time data, or
+  access trends and analytics. Agents should reach for this skill when users
+  request API integration, data retrieval, automation, or real-time monitoring
+  of X platform data.
 metadata:
   mintlify-proj: x
   version: "1.0"
@@ -15,19 +14,21 @@ metadata:
 
 ## Product summary
 
-The X API provides programmatic access to X's public conversation through modern REST endpoints. Agents use it to read posts, search content, manage users, access real-time streams, send direct messages, and analyze trends. The API uses pay-per-usage pricing with no commitments. Key files and commands: Bearer Token (app-only auth), OAuth 1.0a/2.0 credentials (user context), API endpoints at `https://api.x.com/2/`, official SDKs (Python XDK, TypeScript XDK). Primary docs: https://docs.x.com/x-api/introduction
+The X API provides programmatic access to X's public conversation through modern REST endpoints. Agents use it to read posts, search content, manage users, stream real-time data, and access trends. The API uses pay-per-usage pricing with no commitments. Key entry points: Bearer Token authentication for app-only requests, OAuth 2.0 for user-context actions. Primary docs: https://docs.x.com/x-api/introduction. Official SDKs available for Python and TypeScript handle authentication, pagination, and rate limiting automatically.
 
 ## When to use
 
 Reach for this skill when:
-- Building integrations that read, search, or publish posts
-- Implementing user authentication or account management
-- Setting up real-time data streams (filtered stream, volume streams)
-- Managing direct messages, lists, or user relationships
-- Accessing analytics, trends, or compliance data
-- Handling pagination, rate limits, or error responses
-- Choosing between authentication methods (OAuth 1.0a vs 2.0, app-only vs user context)
-- Debugging API errors (401, 403, 429, etc.)
+- User requests to search or retrieve posts from X
+- Building automation to post content, like, repost, or follow users
+- Streaming real-time posts matching specific keywords or rules
+- Looking up user profiles, followers, or engagement metrics
+- Integrating X data into dashboards or analytics tools
+- Managing direct messages or lists programmatically
+- Implementing webhooks for event-driven workflows
+- Accessing historical post data or trends
+
+Do NOT use this skill for: website embedding (use X for Websites), ad campaign management (use X Ads API), or livestream operations (use Livestream API).
 
 ## Quick reference
 
@@ -35,183 +36,182 @@ Reach for this skill when:
 
 | Method | Use case | Credentials |
 |--------|----------|-------------|
-| **Bearer Token (App-only)** | Read public data, no user context | Single token from Developer Console |
-| **OAuth 1.0a User Context** | Act on behalf of a user, legacy integrations | API Key, Secret, Access Token, Token Secret |
-| **OAuth 2.0 Authorization Code** | User login flows, fine-grained scopes | Client ID, Client Secret, Authorization Code |
-| **OAuth 2.0 App-Only** | Server-to-server, public data access | Client ID, Client Secret |
+| Bearer Token (App-only) | Read public data only | Single token, simplest |
+| OAuth 2.0 Authorization Code | User-context actions (post, like, follow) | Client ID + Secret + user approval |
+| OAuth 1.0a User Context | Legacy user-context requests | API Key + Secret + Access Token + Secret |
 
-### Common endpoints
+### Essential endpoints
 
-| Endpoint | Method | Purpose |
-|----------|--------|---------|
-| `/2/users/by/username/{username}` | GET | Look up user by handle |
-| `/2/tweets/{id}` | GET | Get post by ID |
-| `/2/tweets/search/recent` | GET | Search posts from last 7 days |
-| `/2/tweets/search/all` | GET | Full-archive search (Enterprise) |
-| `/2/tweets/search/stream` | GET | Real-time filtered stream |
-| `/2/tweets/search/stream/rules` | POST/GET | Manage stream rules |
-| `/2/tweets` | POST | Create a post |
-| `/2/tweets/{id}` | DELETE | Delete a post |
-| `/2/users/{id}/tweets` | GET | Get user's posts |
-| `/2/direct_messages/conversations/with/{participant_id}/messages` | POST | Send DM |
+| Task | Endpoint | Method |
+|------|----------|--------|
+| Look up user by username | `/2/users/by/username/{username}` | GET |
+| Look up post by ID | `/2/tweets/{id}` | GET |
+| Search recent posts (7 days) | `/2/tweets/search/recent` | GET |
+| Search full archive | `/2/tweets/search/all` | GET |
+| Get user's posts | `/2/users/{id}/tweets` | GET |
+| Create post | `/2/tweets` | POST |
+| Delete post | `/2/tweets/{id}` | DELETE |
+| Like post | `/2/users/{id}/likes` | POST |
+| Follow user | `/2/users/{id}/following` | POST |
+| Stream filtered posts | `/2/tweets/search/stream` | GET |
+| Add stream rule | `/2/tweets/search/stream/rules` | POST |
 
-### Request parameters
+### Field parameters (customize response data)
 
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| `tweet.fields` | Request post fields | `created_at,public_metrics,lang` |
-| `user.fields` | Request user fields | `created_at,description,public_metrics` |
-| `expansions` | Include related objects | `author_id,attachments.media_keys` |
-| `max_results` | Results per page | `100` (varies by endpoint) |
-| `pagination_token` | Cursor for next page | From `meta.next_token` in response |
-| `query` | Search filter | `from:xdevelopers lang:en` |
+Request additional fields with query parameters:
 
-### Response structure
+```bash
+# Posts
+?tweet.fields=created_at,public_metrics,lang,author_id
 
-```json
-{
-  "data": [...],           // Primary results
-  "includes": {...},       // Related objects (users, media, etc.)
-  "meta": {
-    "result_count": 10,
-    "next_token": "abc123"  // Use for pagination
-  }
-}
+# Users
+?user.fields=created_at,description,public_metrics,verified
+
+# Media
+?media.fields=url,preview_image_url,alt_text,type
+
+# Expansions (include related objects)
+?expansions=author_id,attachments.media_keys
 ```
 
-### Rate limit headers
+### Rate limits
 
-| Header | Meaning |
-|--------|---------|
-| `x-rate-limit-limit` | Max requests in 15-minute window |
-| `x-rate-limit-remaining` | Requests left in current window |
-| `x-rate-limit-reset` | Unix timestamp when window resets |
+- Check headers: `x-rate-limit-limit`, `x-rate-limit-remaining`, `x-rate-limit-reset`
+- 429 response = rate limited; wait until `x-rate-limit-reset` timestamp
+- Implement exponential backoff: start 1 minute, double each retry
+- Use streaming instead of polling for real-time data
+
+### Common HTTP status codes
+
+| Code | Meaning | Action |
+|------|---------|--------|
+| 400 | Bad Request | Check parameter formatting, required fields |
+| 401 | Unauthorized | Verify Bearer Token or OAuth credentials |
+| 403 | Forbidden | Check app permissions, user scopes |
+| 404 | Not Found | Resource deleted or doesn't exist |
+| 429 | Rate Limited | Wait and retry with exponential backoff |
 
 ## Decision guidance
 
-### When to use Bearer Token vs OAuth 1.0a
+### When to use Bearer Token vs OAuth 2.0
 
-| Scenario | Use Bearer Token | Use OAuth 1.0a |
-|----------|------------------|----------------|
-| Reading public posts | ✓ | ✓ |
-| Publishing posts | ✗ | ✓ |
-| Acting on behalf of user | ✗ | ✓ |
-| Server-to-server automation | ✓ | ✓ |
-| User login flow | ✗ | ✓ |
-| Simplicity | ✓ | ✗ |
-
-### When to use fields vs expansions
-
-| Need | Use fields | Use expansions |
-|------|-----------|----------------|
-| Get more data on primary object | ✓ | ✗ |
-| Include related objects (author, media) | ✗ | ✓ |
-| Reduce response size | ✓ | ✓ |
-| Get nested object data | ✓ (with expansion) | ✓ |
+| Scenario | Use Bearer Token | Use OAuth 2.0 |
+|----------|-----------------|--------------|
+| Reading public posts only | ✓ | — |
+| Posting, liking, following | — | ✓ |
+| Accessing user's DMs | — | ✓ |
+| Simple read-only automation | ✓ | — |
+| Multi-user app | — | ✓ |
+| Accessing private user data | — | ✓ |
 
 ### When to use search vs filtered stream
 
-| Scenario | Use search | Use filtered stream |
-|----------|-----------|-------------------|
-| Historical data lookup | ✓ | ✗ |
-| Real-time monitoring | ✗ | ✓ |
-| One-time queries | ✓ | ✗ |
-| Continuous listening | ✗ | ✓ |
-| Full-archive access | ✓ (Enterprise) | ✗ |
+| Need | Use search | Use filtered stream |
+|------|-----------|-------------------|
+| Historical data (7+ days old) | ✓ | — |
+| Recent posts (last 7 days) | ✓ | ✓ |
+| Real-time delivery | — | ✓ |
+| One-time query | ✓ | — |
+| Continuous monitoring | — | ✓ |
+| Persistent connection | — | ✓ |
+
+### When to use SDK vs raw HTTP
+
+| Scenario | Use SDK | Use raw HTTP |
+|----------|---------|-------------|
+| Production code | ✓ | — |
+| Testing/prototyping | ✓ | ✓ |
+| Simple one-off requests | — | ✓ |
+| Pagination needed | ✓ | — |
+| Streaming data | ✓ | — |
+| Language not supported | — | ✓ |
 
 ## Workflow
 
-1. **Set up credentials**
-   - Go to console.x.com and create an app
-   - Generate Bearer Token (app-only) or OAuth credentials
-   - Store credentials securely; they display only once
-   - Copy token/keys to environment variables
+### 1. Set up credentials
+- Navigate to https://console.x.com and sign in with X account
+- Create a new app, accept Developer Agreement
+- Copy Bearer Token (for app-only) or OAuth credentials (for user actions)
+- Store credentials in environment variables, never hardcode
 
-2. **Choose authentication method**
-   - For reading public data: use Bearer Token
-   - For user actions (post, like, follow): use OAuth 1.0a or 2.0
-   - For server automation: use Bearer Token or OAuth 2.0 App-Only
-   - For user login flows: use OAuth 2.0 Authorization Code
+### 2. Choose authentication method
+- For reading public data only: use Bearer Token
+- For posting, liking, following: use OAuth 2.0 (recommended) or OAuth 1.0a
+- Verify app has required permissions in Developer Console
 
-3. **Build the request**
-   - Select endpoint from API reference
-   - Add required path parameters (user ID, post ID, etc.)
-   - Add `fields` parameter to request additional data
-   - Add `expansions` to include related objects
-   - Add `query` parameter for search endpoints
-   - Set `max_results` for pagination
+### 3. Make your first request
+- Start with simple endpoint: user lookup, post lookup, or recent search
+- Use cURL or SDK to test: `curl "https://api.x.com/2/users/by/username/xdevelopers" -H "Authorization: Bearer $TOKEN"`
+- Parse JSON response; data is in `data` field, related objects in `includes`
 
-4. **Make the request**
-   - Include `Authorization: Bearer $TOKEN` header
-   - Use correct HTTP method (GET, POST, DELETE)
-   - URL-encode query parameters
-   - Send JSON body for POST requests
+### 4. Customize response with fields and expansions
+- Identify what data you need (created_at, metrics, author info)
+- Add `tweet.fields`, `user.fields`, `media.fields` parameters
+- Use `expansions` to include related objects (author, media, referenced posts)
+- Example: `?tweet.fields=created_at,public_metrics&expansions=author_id&user.fields=username`
 
-5. **Handle the response**
-   - Check HTTP status code (200 = success, 4xx = client error, 5xx = server error)
-   - Extract data from `data` field
-   - Extract related objects from `includes` field
-   - Check `meta.next_token` for pagination
-   - Match IDs between primary and included objects
+### 5. Handle pagination
+- Check response for `meta.next_token` (indicates more results)
+- Pass `next_token` in next request to get next page
+- SDKs handle pagination automatically with iterators
+- Don't poll repeatedly; use `since_id` for incremental updates
 
-6. **Implement pagination**
-   - Check if `meta.next_token` exists in response
-   - If present, make next request with `pagination_token=<next_token>`
-   - Repeat until no `next_token` returned
-   - Use SDKs for automatic pagination
+### 6. Implement error handling
+- Catch 401 (auth failed), 403 (permission denied), 429 (rate limited)
+- For 429: read `x-rate-limit-reset` header, wait, retry with exponential backoff
+- Log errors with request details for debugging
 
-7. **Handle rate limits**
-   - Monitor `x-rate-limit-remaining` header
-   - If you receive 429 response, wait until `x-rate-limit-reset` timestamp
-   - Implement exponential backoff: start with 1 minute, double on each retry
-   - Cache responses to reduce repeated requests
+### 7. For streaming: set up rules and connect
+- POST rules to `/2/tweets/search/stream/rules` with operators (keywords, users, hashtags)
+- GET `/2/tweets/search/stream` to establish persistent connection
+- Process each line as JSON; blank lines are keep-alive signals
+- Implement reconnection logic for disconnections
 
 ## Common gotchas
 
-- **Missing fields in response**: By default, endpoints return minimal fields (id, text for posts). Always add `tweet.fields` or `user.fields` to get additional data.
-- **Forgetting expansions**: To get author details on a post, you need both `expansions=author_id` AND `user.fields=...`. Expansions alone return only the ID.
-- **Bearer Token vs OAuth confusion**: Bearer Token is app-only and can't post or act on behalf of users. Use OAuth 1.0a or 2.0 for user actions.
-- **Pagination token expiration**: Tokens may expire after time. Don't store them long-term; regenerate if needed.
-- **Rate limit 429 errors**: Don't retry immediately. Check `x-rate-limit-reset` header and wait until that Unix timestamp. Implement exponential backoff.
-- **401 Unauthorized**: Verify Bearer Token is correct and hasn't been regenerated. Check `Authorization: Bearer $TOKEN` header format.
-- **403 Forbidden**: App may lack permissions for this endpoint. Check Developer Console app settings. Some endpoints require user-context auth.
-- **404 Not Found**: Post or user doesn't exist, was deleted, or is protected. Verify ID format and that resource is public.
-- **Null fields in response**: X API omits null values from JSON. If a field is missing, its value is null/empty.
-- **Query syntax errors**: Search queries use operators (from:, lang:, has:media). Wrap complex queries in quotes. Test in API reference first.
-- **Streaming connection drops**: Implement reconnection logic with exponential backoff. Use backfill_minutes parameter to recover missed data (Academic Research only).
-- **DM endpoint confusion**: Direct Messages use different endpoints than posts. Use `/2/direct_messages/` prefix, not `/2/tweets/`.
+- **Forgetting Bearer Token prefix**: Use `Authorization: Bearer YOUR_TOKEN`, not just the token
+- **Requesting non-existent fields**: Check data dictionary; some fields require specific tiers or authentication
+- **Not handling 429 rate limits**: Implement exponential backoff; don't retry immediately
+- **Polling instead of streaming**: Use filtered stream for real-time; polling wastes credits
+- **Missing expansions for related data**: To get author details, add `expansions=author_id` AND `user.fields=...`
+- **Hardcoding credentials**: Always use environment variables; never commit tokens to git
+- **Assuming all endpoints support all fields**: Check endpoint docs; some fields only available on certain endpoints
+- **Not checking x-rate-limit-reset**: This header tells you exactly when to retry; use it
+- **Forgetting to add rules before streaming**: Stream returns 409 Conflict if no rules exist
+- **Assuming Bearer Token works for user actions**: Bearer Token is app-only; use OAuth for posting, liking, following
+- **Not handling keep-alive signals in streams**: Blank lines every 20 seconds are normal; don't treat as errors
+- **Requesting too many fields at once**: Each field adds cost; request only what you need
 
 ## Verification checklist
 
-Before submitting work with X API integration:
+Before submitting work:
 
-- [ ] Credentials stored securely (environment variables, not hardcoded)
-- [ ] Correct authentication method chosen for use case
-- [ ] `Authorization` header present and correctly formatted
-- [ ] Required path parameters included in URL
-- [ ] `fields` parameter added to request additional data beyond defaults
-- [ ] `expansions` parameter added if accessing related objects
-- [ ] Response parsing handles `data`, `includes`, and `meta` objects
-- [ ] Pagination implemented if `max_results` < total results
-- [ ] Rate limit headers monitored; exponential backoff implemented for 429
-- [ ] Error responses handled (401, 403, 404, 429 cases covered)
-- [ ] Query syntax validated (especially for search endpoints)
-- [ ] Tested with actual API calls, not just documentation examples
-- [ ] Bearer Token or OAuth credentials regenerated if exposed
-- [ ] API usage monitored in Developer Console for unexpected costs
+- [ ] Credentials stored in environment variables, not hardcoded
+- [ ] Authentication method matches use case (Bearer Token for read-only, OAuth for user actions)
+- [ ] Correct endpoint chosen for the task (search vs stream, recent vs archive)
+- [ ] Fields and expansions added to customize response (not requesting unnecessary data)
+- [ ] Error handling implemented for 401, 403, 429 responses
+- [ ] Rate limit headers checked; exponential backoff implemented for 429
+- [ ] Pagination handled correctly (next_token passed in subsequent requests)
+- [ ] For streaming: rules added before connecting to stream endpoint
+- [ ] Response parsed correctly (data in `data` field, related objects in `includes`)
+- [ ] Tested with cURL or SDK before deploying
+- [ ] No credentials in logs or error messages
 
 ## Resources
 
 **Comprehensive navigation**: https://docs.x.com/llms.txt
 
-**Critical documentation pages**:
-1. [X API Introduction](https://docs.x.com/x-api/introduction) — Overview of endpoints and capabilities
-2. [Make Your First Request](https://docs.x.com/make-your-first-request) — Quick start with cURL examples
-3. [Authentication Overview](https://docs.x.com/fundamentals/authentication/overview) — All auth methods explained
-4. [Fields & Expansions](https://docs.x.com/x-api/fundamentals/fields) — How to customize response data
-5. [Pagination](https://docs.x.com/x-api/fundamentals/pagination) — Cursor-based pagination patterns
-6. [Rate Limits](https://docs.x.com/fundamentals/rate-limits) — Request limits and backoff strategy
-7. [Error Codes](https://docs.x.com/x-api/fundamentals/response-codes-and-errors) — HTTP status meanings and solutions
+**Critical documentation**:
+- [X API Introduction](https://docs.x.com/x-api/introduction) — Overview of endpoints and capabilities
+- [Make Your First Request](https://docs.x.com/make-your-first-request) — Step-by-step quickstart with examples
+- [Authentication Overview](https://docs.x.com/fundamentals/authentication/overview) — All auth methods explained
+- [Fields & Expansions](https://docs.x.com/x-api/fundamentals/fields) — Customize response data
+- [Filtered Stream](https://docs.x.com/x-api/posts/filtered-stream/introduction) — Real-time streaming setup
+- [Rate Limits](https://docs.x.com/fundamentals/rate-limits) — Understand and handle rate limiting
+- [Response Codes & Errors](https://docs.x.com/x-api/fundamentals/response-codes-and-errors) — Error reference
+- [Python SDK](https://docs.x.com/xdks/python/overview) — Official Python library
+- [TypeScript SDK](https://docs.x.com/xdks/typescript/overview) — Official TypeScript library
 
 ---
 
