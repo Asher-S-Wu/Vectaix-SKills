@@ -15,9 +15,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/op7418/guizang-ppt-skill.git",
       "skillPath": "SKILL.md",
-      "skillFolderHash": "c91369c449d34755d320a8b81d0734000d99d1ab",
+      "skillFolderHash": "93d21bf4a73a851907a6eb00acbf30618236667a",
       "installedAt": "2026-10-10T15:32:05.245Z",
-      "updatedAt": "2026-10-10T15:32:05.245Z"
+      "updatedAt": "2026-11-02T07:41:26.076Z"
     },
     "humanizer": {
       "source": "blader/humanizer",
@@ -53,9 +53,9 @@
       "sourceUrl": "https://docs.x.com/.well-known/agent-skills/x/skill.md",
       "skillFolderHash": "",
       "sourceBaseUrl": "https://docs.x.com",
-      "wellKnownDigest": "sha256:549cacb3b5c1e1736a60e9ecb14ec53bc4616cfd5c5951816a4009463a7bff0d",
+      "wellKnownDigest": "sha256:073f22c71d8ceaf66eedc25ba0e173799f926cb9e115a7502baf3dac1e0cef6b",
       "installedAt": "2026-10-10T15:32:55.700Z",
-      "updatedAt": "2026-10-30T06:36:41.765Z"
+      "updatedAt": "2026-11-02T07:17:33.138Z"
     },
     "monid": {
       "source": "monid-ai/plugins",
@@ -166,9 +166,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/exa-labs/agent-skills.git",
       "skillPath": "skills/exa-search/SKILL.md",
-      "skillFolderHash": "346b289f038b89274797526b438e3c0b83d71ede",
+      "skillFolderHash": "bf6249696ad3780b86e73ff1c3aec304aebe1f4a",
       "installedAt": "2026-10-20T10:52:53.723Z",
-      "updatedAt": "2026-10-21T16:33:57.101Z"
+      "updatedAt": "2026-11-02T07:41:33.559Z"
     },
     "brainstorming": {
       "source": "obra/superpowers",
