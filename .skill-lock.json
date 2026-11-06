@@ -430,6 +430,15 @@
       "skillFolderHash": "53160078a04926d98de57a233549612d1b89bdc9",
       "installedAt": "2026-11-06T07:48:17.609Z",
       "updatedAt": "2026-11-06T07:48:17.609Z"
+    },
+    "sound": {
+      "source": "vibe-motion/sound",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vibe-motion/sound.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "85a3715fc3ec7d1e765e4960643dcbacbc22f8dc",
+      "installedAt": "2026-11-06T13:26:16.718Z",
+      "updatedAt": "2026-11-06T13:26:16.718Z"
     }
   },
   "dismissed": {}
