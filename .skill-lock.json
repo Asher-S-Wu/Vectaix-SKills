@@ -38,25 +38,6 @@
       "installedAt": "2026-10-10T15:32:42.540Z",
       "updatedAt": "2026-10-10T15:32:42.540Z"
     },
-    "x": {
-      "source": "docs.x.com",
-      "sourceType": "well-known",
-      "sourceUrl": "https://docs.x.com/.well-known/skills/x/SKILL.md",
-      "skillFolderHash": "",
-      "sourceBaseUrl": "https://docs.x.com",
-      "wellKnownDigest": "sha256:ffa98473268fc8b62f6ce9040caceab1dad5743dc8d1c4e91505eb812f45d55e",
-      "installedAt": "2026-10-10T15:32:55.700Z",
-      "updatedAt": "2026-11-06T08:02:20.385Z"
-    },
-    "monid": {
-      "source": "monid-ai/plugins",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/monid-ai/plugins.git",
-      "skillPath": "plugins/monid/skills/monid/SKILL.md",
-      "skillFolderHash": "874b55b55161079dd0caac1f254887ad35b5db90",
-      "installedAt": "2026-10-10T15:40:36.987Z",
-      "updatedAt": "2026-10-10T15:40:36.987Z"
-    },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -142,24 +123,6 @@
       "skillFolderHash": "1266a3ec4831289c4d893d42dd5102723658039a",
       "installedAt": "2026-10-17T09:31:52.603Z",
       "updatedAt": "2026-10-30T06:36:21.634Z"
-    },
-    "exa-contents": {
-      "source": "exa-labs/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/exa-labs/agent-skills.git",
-      "skillPath": "skills/exa-contents/SKILL.md",
-      "skillFolderHash": "3206fd0db4675af34e864f24b0abf20b58881407",
-      "installedAt": "2026-10-20T10:52:53.691Z",
-      "updatedAt": "2026-10-21T16:33:57.061Z"
-    },
-    "exa-search": {
-      "source": "exa-labs/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/exa-labs/agent-skills.git",
-      "skillPath": "skills/exa-search/SKILL.md",
-      "skillFolderHash": "bf6249696ad3780b86e73ff1c3aec304aebe1f4a",
-      "installedAt": "2026-10-20T10:52:53.723Z",
-      "updatedAt": "2026-11-02T07:41:33.559Z"
     },
     "brainstorming": {
       "source": "obra/superpowers",
@@ -295,15 +258,6 @@
       "skillFolderHash": "660ede63b84ce5d07ef28cccc2973165e2ca06e2",
       "installedAt": "2026-10-27T07:43:33.799Z",
       "updatedAt": "2026-10-27T07:43:33.799Z"
-    },
-    "context7-mcp": {
-      "source": "upstash/context7",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/upstash/context7.git",
-      "skillPath": "skills/context7-mcp/SKILL.md",
-      "skillFolderHash": "7269b47f33ca1c74e86c36aa5c6490aea1018ab4",
-      "installedAt": "2026-10-27T07:44:58.354Z",
-      "updatedAt": "2026-10-27T07:44:58.354Z"
     },
     "remotion-best-practices": {
       "source": "remotion-dev/skills",
