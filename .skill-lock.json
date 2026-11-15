@@ -24,10 +24,10 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/blader/humanizer.git",
       "skillPath": "SKILL.md",
-      "skillFolderHash": "0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0",
+      "skillFolderHash": "b48c832f0f809c1b5658edbb838c2521b72f2413",
       "pluginName": "humanizer",
       "installedAt": "2026-10-10T15:32:10.413Z",
-      "updatedAt": "2026-10-30T06:36:03.531Z"
+      "updatedAt": "2026-11-15T19:26:10.329Z"
     },
     "no-negative-echo": {
       "source": "LB623/no-negative-echo",
@@ -71,40 +71,36 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/docx/SKILL.md",
-      "skillFolderHash": "6e6f5b95c1de6e803cc07b214f5059b074d64e0c",
-      "pluginName": "document-skills",
+      "skillFolderHash": "84c456b5e9fd63d1f9dd54ca504f9b0f18b0e8cb",
       "installedAt": "2026-10-15T17:12:31.967Z",
-      "updatedAt": "2026-10-15T17:12:31.967Z"
+      "updatedAt": "2026-11-15T19:26:17.224Z"
     },
     "pdf": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/pdf/SKILL.md",
-      "skillFolderHash": "6369f4649de69bd6857c9bc3b058a77206009238",
-      "pluginName": "document-skills",
+      "skillFolderHash": "ff7f37394819e5fa311324f953e3c0053a12309d",
       "installedAt": "2026-10-15T17:12:31.985Z",
-      "updatedAt": "2026-10-15T17:12:31.985Z"
+      "updatedAt": "2026-11-15T19:26:22.711Z"
     },
     "pptx": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/pptx/SKILL.md",
-      "skillFolderHash": "64529c8b3f35fe632b7256bd2f6d46e4b40160ce",
-      "pluginName": "document-skills",
+      "skillFolderHash": "81ad201d3ee5111d5993ddbf2affb26382610a86",
       "installedAt": "2026-10-15T17:12:31.999Z",
-      "updatedAt": "2026-10-15T17:12:31.999Z"
+      "updatedAt": "2026-11-15T19:26:29.080Z"
     },
     "xlsx": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/xlsx/SKILL.md",
-      "skillFolderHash": "fe6471cc9b5b97aae0b576ccb92ffd9b0207589d",
-      "pluginName": "document-skills",
+      "skillFolderHash": "1dbe8eaf347f5e08b7ad80a546f9a0af95941ab2",
       "installedAt": "2026-10-15T17:12:32.012Z",
-      "updatedAt": "2026-10-15T17:12:32.012Z"
+      "updatedAt": "2026-11-15T19:26:36.116Z"
     },
     "xilo-opus-video": {
       "source": "Kianzzz/xilo-opus-video",
@@ -120,252 +116,117 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/Vincentwei1021/video-shotcraft.git",
       "skillPath": "SKILL.md",
-      "skillFolderHash": "1266a3ec4831289c4d893d42dd5102723658039a",
+      "skillFolderHash": "253ae59081cd8f85cee47074eec9ad1121f2e5ad",
       "installedAt": "2026-10-17T09:31:52.603Z",
-      "updatedAt": "2026-10-30T06:36:21.634Z"
-    },
-    "brainstorming": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/brainstorming/SKILL.md",
-      "skillFolderHash": "ebd5b1afb600976b12a4c07fedd9c408c1e82f97",
-      "installedAt": "2026-10-27T07:43:33.788Z",
-      "updatedAt": "2026-11-06T08:02:31.223Z"
-    },
-    "diagnosing-superpowers": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/diagnosing-superpowers/SKILL.md",
-      "skillFolderHash": "effb02c345170011be4470c73b99530de43182a7",
-      "installedAt": "2026-10-27T07:43:33.791Z",
-      "updatedAt": "2026-10-27T07:43:33.791Z"
-    },
-    "dispatching-parallel-agents": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/dispatching-parallel-agents/SKILL.md",
-      "skillFolderHash": "15697cb0726c26a66bff737494e8b5266667ba0c",
-      "installedAt": "2026-10-27T07:43:33.792Z",
-      "updatedAt": "2026-10-27T07:43:33.792Z"
-    },
-    "executing-plans": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/executing-plans/SKILL.md",
-      "skillFolderHash": "3a8438d91d9340747ffd985fdbcfe7238d6e1e57",
-      "installedAt": "2026-10-27T07:43:33.793Z",
-      "updatedAt": "2026-11-06T08:02:40.617Z"
-    },
-    "finishing-a-development-branch": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/finishing-a-development-branch/SKILL.md",
-      "skillFolderHash": "3b1205aa5038c71946077dd63b9e71b447729e70",
-      "installedAt": "2026-10-27T07:43:33.793Z",
-      "updatedAt": "2026-10-27T07:43:33.793Z"
-    },
-    "receiving-code-review": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/receiving-code-review/SKILL.md",
-      "skillFolderHash": "b5e154fc3ec7a6a0b1e710eebacc2168620cc428",
-      "installedAt": "2026-10-27T07:43:33.794Z",
-      "updatedAt": "2026-10-27T07:43:33.794Z"
-    },
-    "requesting-code-review": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/requesting-code-review/SKILL.md",
-      "skillFolderHash": "f4a6749898702895ea4fd57c7f186cf43205b99a",
-      "installedAt": "2026-10-27T07:43:33.794Z",
-      "updatedAt": "2026-10-27T07:43:33.794Z"
-    },
-    "subagent-driven-development": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/subagent-driven-development/SKILL.md",
-      "skillFolderHash": "c04a61186680d4cfc6784136d0421cd4abcfb40c",
-      "installedAt": "2026-10-27T07:43:33.795Z",
-      "updatedAt": "2026-11-06T08:02:52.943Z"
-    },
-    "systematic-debugging": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/systematic-debugging/SKILL.md",
-      "skillFolderHash": "774f23e27e35cb0a89ede39156e7b079fbb84190",
-      "installedAt": "2026-10-27T07:43:33.795Z",
-      "updatedAt": "2026-11-06T08:03:00.139Z"
-    },
-    "test-driven-development": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/test-driven-development/SKILL.md",
-      "skillFolderHash": "847144cf0824095922c0d4875648b9fa74877e1a",
-      "installedAt": "2026-10-27T07:43:33.796Z",
-      "updatedAt": "2026-10-27T07:43:33.796Z"
-    },
-    "using-git-worktrees": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/using-git-worktrees/SKILL.md",
-      "skillFolderHash": "d2b8357b922667a091bfe967840abf5ae84ce99c",
-      "installedAt": "2026-10-27T07:43:33.797Z",
-      "updatedAt": "2026-10-27T07:43:33.797Z"
-    },
-    "using-superpowers": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/using-superpowers/SKILL.md",
-      "skillFolderHash": "4c777432715fe58984d212a36aedc6a18472e512",
-      "installedAt": "2026-10-27T07:43:33.797Z",
-      "updatedAt": "2026-10-27T07:43:33.797Z"
-    },
-    "verification-before-completion": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/verification-before-completion/SKILL.md",
-      "skillFolderHash": "a4cb0b69aaefeab540947a7f1642bdaad810e37a",
-      "installedAt": "2026-10-27T07:43:33.798Z",
-      "updatedAt": "2026-10-27T07:43:33.798Z"
-    },
-    "writing-plans": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/writing-plans/SKILL.md",
-      "skillFolderHash": "cc97fa00eb2ccd4f283e34eb2ba06a48e1e679f7",
-      "installedAt": "2026-10-27T07:43:33.798Z",
-      "updatedAt": "2026-10-27T07:43:33.798Z"
-    },
-    "writing-skills": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/writing-skills/SKILL.md",
-      "skillFolderHash": "660ede63b84ce5d07ef28cccc2973165e2ca06e2",
-      "installedAt": "2026-10-27T07:43:33.799Z",
-      "updatedAt": "2026-10-27T07:43:33.799Z"
+      "updatedAt": "2026-11-15T19:27:12.623Z"
     },
     "remotion-best-practices": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-best-practices/SKILL.md",
-      "skillFolderHash": "b4b9ee33f89cf22644190efa3823b530b053b985",
+      "skillFolderHash": "c258c072991d762e93b946a8ac40bc8da4e04c70",
       "installedAt": "2026-10-30T06:36:58.035Z",
-      "updatedAt": "2026-11-06T08:03:17.844Z"
+      "updatedAt": "2026-11-15T19:27:19.377Z"
     },
     "remotion-captions": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-captions/SKILL.md",
-      "skillFolderHash": "46f3ed304d031b174b8a72c929072727b6585d7a",
+      "skillFolderHash": "44c9f0c5259067161bb6740d3b780d986a462450",
       "installedAt": "2026-10-30T06:36:58.036Z",
-      "updatedAt": "2026-11-06T08:03:21.312Z"
+      "updatedAt": "2026-11-15T19:27:22.176Z"
     },
     "remotion-create": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-create/SKILL.md",
-      "skillFolderHash": "9f5561666b0b6ce826be36532437b6ece52cb714",
+      "skillFolderHash": "654e23e4e650828d87bb654590d12c4606c871db",
       "installedAt": "2026-10-30T06:36:58.036Z",
-      "updatedAt": "2026-11-06T08:03:24.119Z"
+      "updatedAt": "2026-11-15T19:27:25.175Z"
     },
     "remotion-docs": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-docs/SKILL.md",
-      "skillFolderHash": "eface912db6bfd354116e60c07241332e1cabaa6",
+      "skillFolderHash": "77bd7edfecb65031ad0398fe417e9590da219271",
       "installedAt": "2026-10-30T06:36:58.036Z",
-      "updatedAt": "2026-11-06T08:03:26.859Z"
+      "updatedAt": "2026-11-15T19:27:27.673Z"
     },
     "remotion-interactivity": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-interactivity/SKILL.md",
-      "skillFolderHash": "8c56db1c95a180c0cd2301e6dbfb7f2d5ff60dc3",
+      "skillFolderHash": "2ee2d3f227235573dc08f3124e543fb020c41a18",
       "installedAt": "2026-10-30T06:36:58.036Z",
-      "updatedAt": "2026-11-06T08:03:30.085Z"
+      "updatedAt": "2026-11-15T19:27:30.405Z"
     },
     "remotion-maps": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-maps/SKILL.md",
-      "skillFolderHash": "d0ce8d225c5e1401c233701754fdd55012a55af4",
+      "skillFolderHash": "008b8ef182227f2d1048a79df0bdd88101f2b08f",
       "installedAt": "2026-10-30T06:36:58.037Z",
-      "updatedAt": "2026-11-06T08:03:33.979Z"
+      "updatedAt": "2026-11-15T19:27:33.918Z"
     },
     "remotion-markup": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-markup/SKILL.md",
-      "skillFolderHash": "8a3c697202d11c7914a100aae05d2ffe1b474018",
+      "skillFolderHash": "9e231f2104d1d384a32060aa72ab4be6d2864493",
       "installedAt": "2026-10-30T06:36:58.037Z",
-      "updatedAt": "2026-11-06T08:03:37.920Z"
+      "updatedAt": "2026-11-15T19:27:37.985Z"
     },
     "remotion-multimedia": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-multimedia/SKILL.md",
-      "skillFolderHash": "0ed850ecc4c6adcabfacf8e70cad9e895c1a3ebc",
+      "skillFolderHash": "35a73843e82a64a09060a56141cd57fcf02e3522",
       "installedAt": "2026-10-30T06:36:58.037Z",
-      "updatedAt": "2026-11-06T08:03:40.758Z"
+      "updatedAt": "2026-11-15T19:27:40.836Z"
     },
     "remotion-render": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-render/SKILL.md",
-      "skillFolderHash": "b6b43b1dc59a51269ff8334a86d882392b110d0e",
+      "skillFolderHash": "ae913883b7ae0ea1e06c3aa10409400d1cdfc0ab",
       "installedAt": "2026-10-30T06:36:58.037Z",
-      "updatedAt": "2026-11-06T08:03:43.568Z"
+      "updatedAt": "2026-11-15T19:27:43.559Z"
     },
     "remotion-saas": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-saas/SKILL.md",
-      "skillFolderHash": "0371545c7f1cb0fe5b422108ffd396b0c06573a7",
+      "skillFolderHash": "aedd1e70b0cb0c121ae06a851b98ea423f212c56",
       "installedAt": "2026-10-30T06:36:58.037Z",
-      "updatedAt": "2026-11-06T08:03:46.415Z"
+      "updatedAt": "2026-11-15T19:27:46.316Z"
     },
     "remotion-studio": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-studio/SKILL.md",
-      "skillFolderHash": "82bfbd0c0b14a4e2c879403247b98e643963b696",
+      "skillFolderHash": "e591150a5284fa62376358710adb265790db4848",
       "installedAt": "2026-10-30T06:36:58.037Z",
-      "updatedAt": "2026-11-06T08:03:49.090Z"
+      "updatedAt": "2026-11-15T19:27:49.014Z"
     },
     "remotion-upgrade": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/remotion-dev/skills.git",
       "skillPath": "skills/remotion-upgrade/SKILL.md",
-      "skillFolderHash": "1040da8c0dd6df17100a3b1f0dc7d6fcac4e8ec5",
+      "skillFolderHash": "73e604304708398c09f6e4c924c281f7f02b60fa",
       "installedAt": "2026-10-30T06:36:58.038Z",
-      "updatedAt": "2026-11-06T08:03:51.693Z"
+      "updatedAt": "2026-11-15T19:27:51.536Z"
     },
     "academic-humanizer": {
       "source": "AIScientists-Dev/academic-humanizer",
@@ -381,9 +242,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/larashero3-dotcom/lieflat-less-ai-tone.git",
       "skillPath": "SKILL.md",
-      "skillFolderHash": "53160078a04926d98de57a233549612d1b89bdc9",
+      "skillFolderHash": "fe77df00a27cf94428632ad449a4aecdcb83db41",
       "installedAt": "2026-11-06T07:48:17.609Z",
-      "updatedAt": "2026-11-06T07:48:17.609Z"
+      "updatedAt": "2026-11-15T19:27:57.535Z"
     },
     "sound": {
       "source": "vibe-motion/sound",
